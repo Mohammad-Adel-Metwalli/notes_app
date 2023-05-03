@@ -14,7 +14,7 @@ class NotesApp extends StatelessWidget
   {
     return MaterialApp(
       home: Scaffold(
-
+        backgroundColor: Colors.red,
       ),
     );
   }
