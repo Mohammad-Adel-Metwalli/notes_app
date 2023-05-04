@@ -19,10 +19,20 @@ class CustomIcon extends StatelessWidget
       ),
 
       child: Center(
-        child: Icon(
-          icon,
-          size: 28,
-          color: icon == FontAwesomeIcons.check ? Colors.green : Colors.white,
+        child: IconButton(
+          onPressed: ()
+          {
+            if(icon == FontAwesomeIcons.check)
+            {
+              Navigator.pop(context);
+            }
+          },
+
+          icon: Icon(
+            icon,
+            size: 28,
+            color: icon == FontAwesomeIcons.check ? Colors.green : Colors.white,
+          ),
         ),
       ),
     );
