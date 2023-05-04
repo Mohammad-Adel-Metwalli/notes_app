@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:notes_app/Views/constants.dart';
 import 'package:notes_app/Views/edit_note_view.dart';
-import 'package:notes_app/Views/home_page.dart';
+import 'package:notes_app/Views/notes_view.dart';
 
 void main() async
 {
@@ -26,11 +26,11 @@ class NotesApp extends StatelessWidget
       ),
 
       routes: {
-        HomePage.id: (context) => const HomePage(),
+        NotesView.id: (context) => const NotesView(),
         EditNoteView.id: (context) => const EditNoteView(),
       },
 
-      initialRoute: HomePage.id,
+      initialRoute: NotesView.id,
     );
   }
 }

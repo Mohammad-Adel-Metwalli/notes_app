@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/Views/Widgets/add_note_bottom_sheet.dart';
 import 'Widgets/notes_view_body.dart';
 
-class HomePage extends StatelessWidget
+class NotesView extends StatelessWidget
 {
-  const HomePage({Key? key}) : super(key: key);
-  static String id = 'HomePage';
+  const NotesView({Key? key}) : super(key: key);
+  static String id = 'NotesView';
 
   @override
   Widget build(BuildContext context)
