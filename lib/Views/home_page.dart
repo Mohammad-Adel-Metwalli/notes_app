@@ -9,8 +9,13 @@ class HomePage extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    return const Scaffold(
-      body: NotesViewBody(),
+    return Scaffold(
+      body: const NotesViewBody(),
+      floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.white,
+          onPressed: (){},
+          child: const Icon(Icons.note_add, color: Colors.green),
+      ),
     );
   }
 }
