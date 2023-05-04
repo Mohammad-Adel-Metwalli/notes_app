@@ -9,6 +9,7 @@ class EditNoteView extends StatelessWidget
   Widget build(BuildContext context)
   {
     return const Scaffold(
+      backgroundColor: Colors.white12,
       body: EditNoteViewBody(),
     );
   }

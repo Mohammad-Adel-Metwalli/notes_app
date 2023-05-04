@@ -1,20 +1,22 @@
-import 'package:flutter/cupertino.dart';
-import 'package:notes_app/Views/Widgets/custom_search_icon.dart';
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notes_app/Views/Widgets/custom_icon.dart';
 
 class CustomAppBar extends StatelessWidget
 {
-  const CustomAppBar({Key? key}) : super(key: key);
+  const CustomAppBar({super.key, required this.title});
+  final String? title;
 
   @override
   Widget build(BuildContext context)
   {
     return Row(
-      children: const [
-        Text('Notes', style: TextStyle(fontSize: 28)),
+      children: [
+        Text(title!, style: const TextStyle(fontSize: 28)),
 
-        Spacer(),
+        const Spacer(),
 
-        CustomSearchIcon()
+        CustomIcon(icon: title! == 'Notes'? Icons.search_sharp : FontAwesomeIcons.check)
       ],
     );
   }

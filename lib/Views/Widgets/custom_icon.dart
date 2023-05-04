@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class CustomSearchIcon extends StatelessWidget
+
+class CustomIcon extends StatelessWidget
 {
-  const CustomSearchIcon({Key? key}) : super(key: key);
+  const CustomIcon({Key? key, required this.icon}) : super(key: key);
+  final IconData icon;
 
   @override
   Widget build(BuildContext context)
@@ -15,10 +18,11 @@ class CustomSearchIcon extends StatelessWidget
         borderRadius: BorderRadius.circular(12)
       ),
 
-      child: const Center(
+      child: Center(
         child: Icon(
-          Icons.search_sharp,
+          icon,
           size: 28,
+          color: icon == FontAwesomeIcons.check ? Colors.green : Colors.white,
         ),
       ),
     );

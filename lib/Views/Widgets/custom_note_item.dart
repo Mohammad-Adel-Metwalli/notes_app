@@ -2,8 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:date_time_format/date_time_format.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import 'edit_note_view_body.dart';
+import '../edit_note_view.dart';
 
 class CustomNoteItem extends StatelessWidget
 {
@@ -20,7 +19,7 @@ class CustomNoteItem extends StatelessWidget
       {
         Navigator.push(context, MaterialPageRoute(builder: (context)
         {
-          return const EditNoteViewBody();
+          return const EditNoteView();
         }));
       },
       child: Container(
