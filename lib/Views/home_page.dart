@@ -16,7 +16,12 @@ class HomePage extends StatelessWidget
           backgroundColor: Colors.white,
           onPressed: ()
           {
-            showModalBottomSheet(context: context, builder: (context)
+            showModalBottomSheet(
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(30))
+                ),
+                context: context, 
+                builder: (context)
             {
               return const AddNoteBottomSheet();
             });
