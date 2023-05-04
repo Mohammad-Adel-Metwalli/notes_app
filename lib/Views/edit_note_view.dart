@@ -4,7 +4,7 @@ import 'package:notes_app/Views/Widgets/edit_note_view_body.dart';
 class EditNoteView extends StatelessWidget
 {
   const EditNoteView({Key? key}) : super(key: key);
-
+  static String id = 'EditNoteView';
   @override
   Widget build(BuildContext context)
   {
