@@ -1,6 +1,8 @@
 import 'package:animated_snack_bar/animated_snack_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notes_app/Cubits/notes_cubit.dart';
 import '../Models/note_model.dart';
 import '../edit_note_view.dart';
 
@@ -44,6 +46,7 @@ class CustomNoteItem extends StatelessWidget
                   child: IconButton(onPressed: ()
                   {
                     note.delete();
+                    BlocProvider.of<NotesCubit>(context).fetchAllNotes();
                     AnimatedSnackBar.material(
                       'Note deleted successfully',
                       type: AnimatedSnackBarType.success,
