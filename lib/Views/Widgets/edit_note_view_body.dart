@@ -5,6 +5,7 @@ import 'package:notes_app/Cubits/notes_cubit.dart';
 import 'package:notes_app/Views/Widgets/custom_app_bar.dart';
 import 'package:notes_app/Views/Widgets/custom_text_field.dart';
 import '../Models/note_model.dart';
+import 'edit_colors_list_view.dart';
 
 class EditNoteViewBody extends StatefulWidget
 {
@@ -59,7 +60,15 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody>
           CustomTextField(hintText: 'Content', maxLines: 5, onChanged: (value)
           {
             content = value;
-          })
+          }),
+
+          const SizedBox(
+            height: 20,
+          ),
+
+          EditColorsListView(
+            note: widget.note,
+          )
         ],
       ),
     );
