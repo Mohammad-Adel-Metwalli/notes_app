@@ -60,23 +60,33 @@ class _AddNoteFormState extends State<AddNoteForm> {
             child: BlocBuilder<AddNoteCubit, AddNoteState>(
               builder: (context, state) {
                 return CustomButton(
-                  isLoading: state is AddNoteLoading ? true : false,
-                  onTap: () {
-                    if (formKey.currentState!.validate()) {
+                  isLoading: state is AddNoteLoading? true: false,
+                  onTap: ()
+                  {
+                    if (formKey.currentState!.validate())
+                    {
                       formKey.currentState!.save();
                       var noteModel = NoteModel(
-                          title: title!, subTitle: subTitle!, date: DateTime
-                          .now().toString(), color: Colors.white.value);
+                          title: title!,
+                          subTitle: subTitle!,
+                          date: DateTime
+                          .now().toString(),
+                          color: Colors.white.value
+                      );
+
                       BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
+
                       AnimatedSnackBar.material(
                         'Note added successfully',
                         type: AnimatedSnackBarType.success,
                       ).show(context);
                     }
 
-                    else {
+                    else
+                    {
                       autovalidateMode = AutovalidateMode.always;
-                      setState(() {
+                      setState(()
+                      {
 
                       });
                       AnimatedSnackBar.material(
