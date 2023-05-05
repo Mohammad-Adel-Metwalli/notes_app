@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:notes_app/Cubits/notes_cubit.dart';
 import 'package:notes_app/Views/constants.dart';
-import 'package:notes_app/Views/edit_note_view.dart';
 import 'package:notes_app/Views/notes_view.dart';
 import 'package:notes_app/simple_bloc_observer.dart';
 import 'Views/Models/note_model.dart';
@@ -31,12 +30,7 @@ class NotesApp extends StatelessWidget {
             fontFamily: 'Poppins'
         ),
 
-        routes: {
-          NotesView.id: (context) => const NotesView(),
-          EditNoteView.id: (context) => const EditNoteView(),
-        },
-
-        initialRoute: NotesView.id,
+        home: const NotesView(),
       ),
     );
   }
