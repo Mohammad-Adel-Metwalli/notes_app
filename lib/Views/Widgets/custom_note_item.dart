@@ -1,3 +1,4 @@
+import 'package:animated_snack_bar/animated_snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../Models/note_model.dart';
@@ -40,7 +41,15 @@ class CustomNoteItem extends StatelessWidget
                     borderRadius: BorderRadius.circular(16),
                     color: Colors.grey.withOpacity(0.1)
                   ),
-                  child: IconButton(onPressed: (){}, icon: const Icon(FontAwesomeIcons.trash, color: Colors.red, size: 22,))
+                  child: IconButton(onPressed: ()
+                  {
+                    note.delete();
+                    AnimatedSnackBar.material(
+                      'Note deleted successfully',
+                      type: AnimatedSnackBarType.success,
+                    ).show(context);
+                  }
+                  , icon: const Icon(FontAwesomeIcons.trash, color: Colors.red, size: 22,))
               ),
             ),
 
