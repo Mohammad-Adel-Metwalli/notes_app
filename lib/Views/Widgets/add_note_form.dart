@@ -1,7 +1,7 @@
 import 'package:animated_snack_bar/animated_snack_bar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:notes_app/Cubits/add_note_cubit.dart';
 import 'package:notes_app/Views/Models/note_model.dart';
 import 'custom_button.dart';
@@ -65,12 +65,13 @@ class _AddNoteFormState extends State<AddNoteForm> {
                   {
                     if (formKey.currentState!.validate())
                     {
+                      DateTime now = DateTime.now();
+                      String formattedDate = DateFormat('yyyy-MM-dd').format(now);
                       formKey.currentState!.save();
                       var noteModel = NoteModel(
                           title: title!,
                           subTitle: subTitle!,
-                          date: DateTime
-                          .now().toString(),
+                          date: formattedDate,
                           color: Colors.white.value
                       );
 
